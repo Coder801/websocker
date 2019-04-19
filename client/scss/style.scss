@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #f2f5f8;
+  --secondary-color: #444752;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: #c5ddeb;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  display: grid;
+  width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 5px;
+  grid-template: "search headline" 80px
+                 "contacts chat" 1fr
+                 / 30% 1fr;
+}
+
+
+.search {
+  & {
+    grid-area: search;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  &__field {
+    background-color: #6a6c75;
+    position: relative;
+    border-radius: 3px;
+  }
+  &__input {
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    color: #a8a5a2;
+    background-color: transparent;
+
+    &::placeholder {
+      color: #a8a5a2;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    background-size: cover;
+    width: 14px;
+    height: 14px;
+    fill: white;
+    stroke: white;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 250.313 250.313' style='enable-background:new 0 0 250.313 250.313;' xml:space='preserve'%3E%3Cg id='Search'%3E%3Cpath fill='white' style='fill-rule:evenodd;clip-rule:evenodd;' d='M244.186,214.604l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76 c10.7-16.231,16.945-35.66,16.945-56.554C205.822,46.075,159.747,0,102.911,0S0,46.075,0,102.911 c0,56.835,46.074,102.911,102.91,102.911c20.895,0,40.323-6.245,56.554-16.945c0.269,0.301,0.47,0.64,0.759,0.929l54.38,54.38 c8.169,8.168,21.413,8.168,29.583,0C252.354,236.017,252.354,222.773,244.186,214.604z M102.911,170.146 c-37.134,0-67.236-30.102-67.236-67.235c0-37.134,30.103-67.236,67.236-67.236c37.132,0,67.235,30.103,67.235,67.236 C170.146,140.044,140.043,170.146,102.911,170.146z'/%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+  }
+}
+
+
+.headline {
+  grid-area: headline;
+  background-color: var(--primary-color);
+
+  &__caption {
+    padding: 15px 30px;
+  }
+
+  &__name {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #474750;
+  }
+  &__info {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: #474750;
+  }
+}
+
+.contacts {
+  grid-area: contacts;
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+  padding: 10px 20px;
+
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    color: #fefefe;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  &__status {
+    color: #8a929c;
+    font-size: 11px;
+    margin: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: #86bb71;
+      margin: 0 4px 0 0;
+      position: relative;
+      top: 4px;
+      float: left;
+      border-radius: 5px;
+    }
+
+    &--offline {
+      &:before {
+        background-color: #e38967;
+      }
+    }
+  }
+}
+
+
+.chat {
+  grid-area: chat;
+  background-color: var(--primary-color);
+  background-color: #ccc;
+}

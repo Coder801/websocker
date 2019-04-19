@@ -1,0 +1,32 @@
+:root {
+  --secondary-color: #444752; }
+
+.app {
+  display: grid;
+  width: 600px;
+  grid-template: "search headline" 80px "contacts chat" 1fr / 30% 1fr; }
+
+.search {
+  grid-area: search;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  box-sizing: border-box; }
+
+.search__field {
+  background-color: #6a6c75; }
+
+.search__input {
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 5px 3px;
+  box-sizing: border-box; }
+
+.headline {
+  grid-area: headline; }
+
+.contacts {
+  grid-area: contacts; }
+
+.chat {
+  grid-area: chat; }
